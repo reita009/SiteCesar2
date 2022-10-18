@@ -1,27 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-    width: 100vw;   
+    width: 100%;   
     flex-direction: column;
-    padding-bottom: 0%;
     background: rgb(235,220,181);
     background: linear-gradient(0deg, rgba(235,220,181,1) 0%, rgba(17,17,20,1) 72%);
-    padding-bottom: 30px;
-    padding-top: 200px;
+    overflow: hidden;
+    padding-top: 140px;
     .left{
         display: flex;
         flex-direction: column;
+        margin: auto;
+        height: 800px;
+        width:370px ;
+        @media (min-width: 760px) {
+            margin-left: 70px;
+            width: 600px;
+         
+        }
     }
+ 
     .wrap{
         display: flex;
         flex-direction: column;
-        
+        @media (max-width: 760px) {
+                width: 400px;
+                margin: auto;
+            }
+
         .body{
+            
             margin-top: 50px;
             justify-content: space-between;
              display: flex;
              flex-direction: column;
-
             @media (min-width: 760px) {
                 flex-direction: row;
             }
@@ -38,15 +50,24 @@ export const Container = styled.section`
 export const Img = styled.img`
     height: 600px;
     width: 400px;
+    @media (max-width: 760px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
 `;
 export const Title = styled.h1`
-    font-size: 30px;
     text-align: center;
-    color: #FFDA79;
+    color: ${props => props.color};
+    margin-bottom: 20px;
+    @media (max-width: 760px) {
+            font-size: ${props => props.size };
+            
+        }
+
 `;
 export const Form = styled.form`
     height: 600px;
-    width: 400px;
+    width: 370px;
     background-color: #1D1C1D;
     border-radius: 20px;
     margin-left: auto;
@@ -75,4 +96,23 @@ export const Dice = styled.img`
 export const textForm = styled.p`
   margin-top:${props => props.large ? '18px' : '13px'};
   color: #E1E1E1;
+`;
+export const Btn = styled.button`
+    background-color: ${props=> props.bg};
+    padding: 2px;
+    height: 55px;
+    width: ${props=> props.size};
+    border-radius: 10px;
+    align-self: center;
+    color:${props=> props.color};
+    &:hover{
+        background-color: ${props=> props.bgHover};
+            cursor: pointer;
+            transition: 0.6s ease-in;
+    }
+    @media (max-width: 760px) {
+        width: 80%;
+        margin-left: 27px;
+    }
+   
 `;
