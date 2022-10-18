@@ -6,6 +6,9 @@ export const Container = styled.header`
     height: 130px;
     padding: 10px;
     background-color: #060607;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, inset -50px -50px 0px -30px rgba(253,255,247,0); 
+    box-shadow: 0px 10px 13px -7px #000000, inset -50px -50px 0px -30px rgba(253,255,247,0);
+    position: fixed;
 
     @media (min-width: 760px) {
         justify-content: space-between;
